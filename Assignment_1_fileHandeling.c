@@ -1,3 +1,16 @@
+/*
+*1) Sequential File Organization
+*
+*   Implement following problem statement using C language
+*
+*      Make a structure of student detail and perform the following operations on it.
+*
+* Write a program to read data from a given text file.
+* Write a program to write data to a given text file.
+* Write a program to copy the content of one file to another.
+* Write a program to search specific record from a given file.
+* Write a program to delete a specific record from a given file.
+*/
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
