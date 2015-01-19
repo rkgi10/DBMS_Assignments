@@ -250,7 +250,7 @@ void delete_record()
         fwrite(&s,sizeof(s),1,fp);
     }*/
     remove(filename);
-    rename("temp.txt",filename);
+    rename("temp.txt",filename);      // rename(oldfile , newfile)
 
     fclose(fp);
     fclose(fp1);
