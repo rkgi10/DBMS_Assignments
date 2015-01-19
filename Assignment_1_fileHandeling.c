@@ -207,7 +207,7 @@ void copy_file()
 /* Logic : delete_record() function
 * Copy all data from main file to temp file except the record we have to delete(id=s.id)
 *
-* Then again transfer data from temp to our main file .. it will not contain id=s.id
+* Then again transfer data from temp to our main file .. it will not contain id=s.id   or rename temp file
 */
 
 void delete_record()
@@ -235,7 +235,7 @@ void delete_record()
 
     fclose(fp);
     fclose(fp1);
-
+    /*
     //------copying from temp.txt to filename
     fp=fopen(filename,"wb");
     fp1=fopen("temp.txt","rb");
@@ -248,7 +248,9 @@ void delete_record()
             break;
 
         fwrite(&s,sizeof(s),1,fp);
-    }
+    }*/
+    remove(filename);
+    rename("temp.txt",filename);
 
     fclose(fp);
     fclose(fp1);
