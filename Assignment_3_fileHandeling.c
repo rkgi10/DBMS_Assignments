@@ -99,6 +99,11 @@ void display()
 
     FILE *fp=fopen(file2,"rb");   //content
 
+    if (fp==NULL)
+    {
+        printf("No such file exists.....\n");
+    }
+
     printf("---------- Student Records -----------\n");
     printf("ID\tName\t\t\tDepartment\n\n");
 
