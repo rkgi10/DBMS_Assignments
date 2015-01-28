@@ -113,6 +113,12 @@ void display()
 {
 
     FILE *fp=fopen(filename,"rb");
+    
+    if (fp==NULL)
+    {
+        printf("Error Reading file or No such file is exists..");
+        break;
+    }
 
     printf("---------- Student Records -----------\n");
     printf("ID\tName\t\t\tDepartment\n\n");
