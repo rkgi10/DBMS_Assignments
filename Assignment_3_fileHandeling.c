@@ -178,7 +178,8 @@ void search()
 
     fclose(fp1);
 }
-
+// using temp file
+/*
 void delete_record()
 {
     FILE *fp,       //detail.txt
@@ -221,6 +222,53 @@ void delete_record()
     rename("temp_index.txt",file1);
 
     //---------------------end of copy
+
+    printf("\n\nSuccessfully deleted record...\n\n");
+}
+*/
+
+// without using temp file
+void delete_record()
+{
+    FILE *fp1,       //index.txt
+         *fp2;      //detail.txt
+    int count=0;
+    int id,no,index[50];    // index[] ans ss[] to store datail of file except index to be deleted
+    student s,ss[50];
+
+    fp1=fopen(file1,"rb+");
+    fp2=fopen(file2,"rb+");
+
+    printf("Enter student id to delete record : ");
+    scanf("%d",&id);
+
+    while(1)
+    {
+        fread(&s,sizeof(s),1,fp2);
+        fread(&no,sizeof(no),1,fp1);
+
+        if(feof(fp1))
+            break;
+
+        if(id!=s.id)
+        {
+            ss[count]=s;
+            index[count]=no;
+            count++;
+        }
+
+    }
+    fclose(fp1);
+    fclose(fp2);
+
+    // reopen file
+    fp1=fopen(file1,"wb");
+    fp2=fopen(file2,"wb");
+    fwrite(&s.id,sizeof(s.id),count,fp1);
+    fwrite(&ss,sizeof(ss[0]),count,fp2);
+
+    fclose(fp1);
+    fclose(fp2);
 
     printf("\n\nSuccessfully deleted record...\n\n");
 }
