@@ -23,7 +23,16 @@ where station.name='MUMBAI' and
 
 select s.stcode,s.name  
 from train t,station s,trainhalts th
-where t.id=th.id and th.stcode=s.stcode and t.name='CST-AMR_LOCAL';
+where t.id=th.id and 
+    th.stcode=s.stcode and 
+    t.name='CST-AMR_LOCAL';
 
 // query 5
 
+SELECT t.name
+FROM train t,trainhalts th,station s
+WHERE s.name='THANE' AND
+    s.stcode=th.stcode AND
+    th.id=t.id AND
+    th.seqno<6;
+    
