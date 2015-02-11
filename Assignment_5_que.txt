@@ -1,7 +1,7 @@
-http://172.16.1.10/moodle/pluginfile.php/11838/mod_assignment/intro/deposit.jpg
-http://172.16.1.10/moodle/pluginfile.php/11838/mod_assignment/intro/b.jpg
-http://172.16.1.10/moodle/pluginfile.php/11838/mod_assignment/intro/caa.jpg
-http://172.16.1.10/moodle/pluginfile.php/11838/mod_assignment/intro/bbbaa.jpg
+https://drive.google.com/file/d/0B1IAq2-wyMBVUjQ2bTFkR0hFbEU/view?usp=sharing
+https://drive.google.com/file/d/0B1IAq2-wyMBVS19iTk9Tb25nVjQ/view?usp=sharing
+https://drive.google.com/file/d/0B1IAq2-wyMBVbXpINDAwZEZMTmM/view?usp=sharing
+https://drive.google.com/file/d/0B1IAq2-wyMBVYlFmc3lYbGt4QmM/view?usp=sharing
 
 (1) Describe deposit, branch.
 
