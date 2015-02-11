@@ -26,37 +26,37 @@ amount float
 );
 
 ############################ 3 #######################################
-SELECT * FROM deposit
+SELECT * FROM deposit;
 
 ############################ 4 #######################################
-SELECT * FROM borrow
+SELECT * FROM borrow;
 
 ############################ 5 #######################################
-SELECT * FROM customers
+SELECT * FROM customers;
 
 ############################ 6 #######################################
-SELECT * FROM branch
+SELECT * FROM branch;
 
 ############################ 7 #######################################
 SELECT actno,amount
-FROM deposit
+FROM deposit;
 
 ############################ 8 #######################################
 SELECT cname
 FROM deposit
-WHERE amount > 4000
+WHERE amount > 4000;
 
-############################ 9 #######################################
-SELECT cname
+############################ 9 #######################################   ERROR
+SELECT customers.cname
 FROM customers,deposit
 WHERE customers.cname=deposit.cname AND
-      deposit.adate > '1-12-96'
+      deposit.adate > '1-DEC-96';
 
 ############################ 10 #######################################
 SELECT cname
 FROM deposit
 WHERE amount = (SELECT MIN(amount)
-                FROM deposit)
+                FROM deposit);
 
 ############################ 11 #######################################
 SELECT cname
@@ -66,45 +66,45 @@ WHERE amount = (SELECT MAX(amount)
                 
 ############################ 12 #######################################
 SELECT SUM(amount)
-FROM deposit
+FROM deposit;
 
 ############################ 13 #######################################
 SELECT SUM(amount)
-FROM borrow
+FROM borrow;
 
 ############################ 14 #######################################
 SELECT cname
 FROM deposit
 WHERE amount > (SELECT AVG(amount) 
-                FROM deposit)
+                FROM deposit);
 
 ############################ 15 #######################################
 SELECT cname
 FROM customers
 WHERE city='Bombay' OR
-      city='Nagpur'
+      city='Nagpur';
 
 ############################ 16 #######################################
 SELECT bname
 FROM branch
 WHERE city='Nagpur' OR
       city='Delhi'  OR
-      city='Banglore'
+      city='Banglore';
 
 ############################ 17 #######################################
 SELECT AVG(d.amount) , AVG(b.amount)
-FROM deposit as d, borrow as b
+FROM deposit as d, borrow as b;
 
-############################ 18 #######################################
-SELECT SUM(*)
+############################ 18 ####################################### ERROR
+SELECT SUM()
 FROM customers
-WHERE city='bombay'
+WHERE city='bombay';
 
-############################ 19 #######################################
+############################ 19 ####################################### ERROR
 SELECT SUM(bname)
 FROM branch
 WHERE city='Delhi' OR
-      city='Nagpur'
+      city='Nagpur';
 
 ############################ 20 #######################################
-SELECT NOW()
+SELECT NOW();
