@@ -1,0 +1,49 @@
+###################### 1 #########################
+create table employee(
+emp_no integer primary key,
+emp_name varchar(50) NOT NULL,
+emp_join_Date date DEFAULT sysdate,
+emp_status char(1)
+);
+
+create table project(
+project_code integer primary key,
+project_description varchar(100) NOT NULL UNIQUE , 
+project_start_date date NOT NULL,
+project_end_date date
+);
+
+create table project_allocation(
+project_code integer,
+emp_no integer,
+emp_proj_alloc_date date, 
+emp_proj_release_date date,
+primary key(project_code,emp_no)
+);
+
+###################### 2 #########################
+insert into employee values(101,'Jhonny','1-jul-2005','C');
+insert into employee values(116,'Nayak','16-aug-2005','C');
+insert into employee values(202,'Meera','30-jan-2006','C');
+insert into employee values(205,'Ravi','11-feb-2006','C');
+insert into employee values(304,'Hari','25-nov-2006','P');
+insert into employee values(307,'Nancy','15-jan-2007','P');
+insert into employee values(403,'Nick','21-jan-2007','P');
+
+###################### 3 #########################
+insert into project values('P001','Environment Pollution','2-aug-2005','11-dec-2006');
+insert into project values('P002','Learning Curve','1-feb-2006','');
+insert into project values('P003','Effects of IT','3-jan-2007','');
+
+###################### 4 #########################
+insert into project_allocation values ('p001','101','01-aug-2005','11-dec-2006');
+insert into project_allocation values ('p001','116','16-aug-2005','11-dec-2006');
+insert into project_allocation values ('p002','202','01-feb-2006','14-jan-2007');
+insert into project_allocation values ('p002','307','15-jan-2007','');
+insert into project_allocation values ('p002','205','11-feb-2006','');
+insert into project_allocation values ('p003','403','21-jan-2007','');
+insert into project_allocation values ('p003','304','03-jan-2007','');
+insert into project_allocation values ('p003','101','03-jan-2007','');
+insert into project_allocation values ('p003','116','03-jan-2007','');
+insert into project_allocation values ('p003','202','15-jan-2007','');
+
