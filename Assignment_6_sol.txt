@@ -69,7 +69,7 @@ select *
  where e.emp_no=p.emp_no and p.project_code='p003';
  
 7=>
-select * from project where project_end_date>sysdate;
+select * from project where project_end_date is null;
  
 8=>
 select * 
