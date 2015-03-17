@@ -95,7 +95,7 @@ update project set project_manager='202' where project_code='p002';
 update project set project_manager='116' where project_code='p003';
 
 ######################  8 ##########################
-insert into project values('p010','Election Rage','01-mar-2007','');
+insert into project values('p010','Election Rage','01-mar-2007','','');
 
 
 ######################  9 ##########################
